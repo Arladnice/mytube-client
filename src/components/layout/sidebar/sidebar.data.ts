@@ -28,7 +28,8 @@ export const sidebarData: ISidebarItem[] = [
   {
     label: 'Video games',
     icon: Gamepad2,
-    link: PUBLIC_PAGE.VIDEO_GAMES
+    link: PUBLIC_PAGE.VIDEO_GAMES,
+    isBottomBorder: true
   },
   {
     label: 'My channel',
