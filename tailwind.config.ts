@@ -17,8 +17,7 @@ const config: Config = {
         DEFAULT: '0.3s'
       }
     }
-  },
-  plugins: []
+  }
 }
 
 export default config

@@ -11,10 +11,13 @@ export function MenuItem({ item, isActive }: Props) {
   return (
     <li>
       <Link href={item.link} className='group flex items-center gap-5 py-3'>
-        <item.icon className='group-hover:text-primary transition-colors group-hover:rotate-6 min-w-6' />
+        <item.icon
+          className={cn('min-w-6', {
+            'group-hover:text-primary transition-colors group-hover:rotate-6 ': !isActive
+          })}
+        />
         <span
-          className={cn({
-            'border-b': isActive,
+          className={cn('border-b', {
             'border-white': isActive,
             'border-transparent': !isActive
           })}
