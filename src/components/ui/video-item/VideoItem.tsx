@@ -4,8 +4,8 @@ import Link from 'next/link'
 
 import { PAGE } from '@/config/public-page.config'
 
+import { transformDate } from '@/utils/transform-date'
 import { transformViews } from '@/utils/transform-views'
-import { transformDate } from '@/utils/transorm-date'
 
 import type { IVideo } from '@/types/video.types'
 
@@ -15,13 +15,11 @@ interface Props {
 }
 
 export function VideoItem({ video, Icon }: Props) {
-  console.log(video.thumbnailUrl)
-
   return (
-    <div>
+    <div className='w-full'>
       <div className='relative mb-1.5'>
-        <Link href={PAGE.VIDEO(video.slug)}>
-          <Image src={video.thumbnailUrl} alt={video.title} width={280} height={140} className='rounded-md' />
+        <Link href={PAGE.VIDEO(video.slug)} className='block relative aspect-video overflow-hidden rounded-md'>
+          <Image src={video.thumbnailUrl} alt={video.title} fill className='object-cover' />
         </Link>
         <Link href={PAGE.CHANNEL(video.channel.slug)} className='absolute left-2 bottom-2'>
           <Image

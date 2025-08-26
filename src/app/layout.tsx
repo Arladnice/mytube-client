@@ -12,7 +12,10 @@ const notoSans = Noto_Sans({
 })
 
 export const metadata: Metadata = {
-  title: 'MyTube',
+  title: {
+    absolute: 'MyTube',
+    template: `%s | MyTube`
+  },
   description: 'Watch content'
 }
 
@@ -23,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={notoSans.className}>
+      <body className={notoSans.className} suppressHydrationWarning>
         <Providers>
           <Layout>{children}</Layout>
         </Providers>

@@ -13,11 +13,17 @@ export function Layout({ children }: PropsWithChildren<unknown>) {
   const [isShowedSidebar, setIsShowedSidebar] = useState(true)
 
   const handleToggleSidebar = () => {
-    setIsShowedSidebar((prev) => !prev)
+    setIsShowedSidebar(prev => !prev)
   }
 
   return (
-    <main className={cn('flex min-h-screen', isShowedSidebar ? styles.showedSidebar : styles.hidedSidebar)}>
+    <main
+      className={cn(
+        'flex min-h-screen',
+        styles.initialSidebar,
+        isShowedSidebar ? styles.showedSidebar : styles.hidedSidebar
+      )}
+    >
       <Sidebar onToggleSidebar={handleToggleSidebar} />
       <Content>{children}</Content>
     </main>
