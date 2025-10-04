@@ -27,9 +27,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={notoSans.className} suppressHydrationWarning>
-        <Providers>
-          <Layout>{children}</Layout>
-        </Providers>
+        <Providers>{children}</Providers>
       </body>
     </html>
   )

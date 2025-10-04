@@ -4,7 +4,7 @@ import type { Metadata } from 'next'
 import { Heading } from '@/ui/Heading'
 import { VideoItem } from '@/ui/video-item/VideoItem'
 
-import { Explore } from './(public)/explore/Explore'
+import { Explore } from './explore/Explore'
 import { videoService } from '@/services/video.service'
 
 export const revalidate = 100

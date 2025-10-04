@@ -1,9 +1,6 @@
-import { Menu, SquarePlay } from 'lucide-react'
-import Link from 'next/link'
+import { Menu } from 'lucide-react'
 
-import { COLORS } from '@/constants/colors.constants'
-
-import { PAGE } from '@/config/public-page.config'
+import { Logo } from './Logo'
 
 export function SidebarHeader({ onToggleSidebar }: { onToggleSidebar: () => void }) {
   return (
@@ -12,10 +9,7 @@ export function SidebarHeader({ onToggleSidebar }: { onToggleSidebar: () => void
         <Menu />
       </button>
 
-      <Link href={PAGE.HOME} className='flex items-center gap-1.5'>
-        <SquarePlay color={COLORS.primary} size={29} />
-        <span className='font-medium'>MyTube</span>
-      </Link>
+      <Logo />
     </div>
   )
 }
