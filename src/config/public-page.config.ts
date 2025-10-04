@@ -14,7 +14,9 @@ class PublicPage {
 
   CHANNEL = (path: string) => `/c/${path}`
 
-  SEARCH = (search: string) => `/s?term=${search}`
+  SEARCH(searchTerm: string) {
+    return `/search?term=${searchTerm}`
+  }
 }
 
 export const PAGE = new PublicPage()

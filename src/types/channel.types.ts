@@ -1,6 +1,5 @@
 export interface IChannel {
   id: string
-  name: string
   slug: string
   description: string
   isVerified: boolean

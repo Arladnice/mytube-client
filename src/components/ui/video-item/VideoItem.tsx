@@ -1,3 +1,4 @@
+import * as m from 'framer-motion/m'
 import { BadgeCheck, type LucideIcon } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -16,7 +17,11 @@ interface Props {
 
 export function VideoItem({ video, Icon }: Props) {
   return (
-    <div className='w-full'>
+    <m.div
+      className='w-full'
+      whileHover={{ scale: 1.03, y: -5 }}
+      transition={{ type: 'spring', stiffness: 500, damping: 30 }}
+    >
       <div className='relative mb-1.5'>
         <Link href={PAGE.VIDEO(video.slug)} className='block relative aspect-video overflow-hidden rounded-md'>
           <Image src={video.thumbnailUrl} alt={video.title} fill className='object-cover' />
@@ -24,7 +29,7 @@ export function VideoItem({ video, Icon }: Props) {
         <Link href={PAGE.CHANNEL(video.channel.slug)} className='absolute left-2 bottom-2'>
           <Image
             src={video.channel.avatarUrl}
-            alt={video.channel.name}
+            alt={video.channel.user.name}
             width={35}
             height={35}
             className='rounded-full shadow'
@@ -48,11 +53,13 @@ export function VideoItem({ video, Icon }: Props) {
       <div>
         <Link href={PAGE.CHANNEL(video.channel.slug)} className='flex items-center gap-1'>
           <span className='text-gray-400 text-sm'>{video.channel.user.name}</span>
-          <span>
-            <BadgeCheck className='text-green-500' size={16} />
-          </span>
+          {video.channel.isVerified && (
+            <span>
+              <BadgeCheck className='text-green-500' size={16} />
+            </span>
+          )}
         </Link>
       </div>
-    </div>
+    </m.div>
   )
 }

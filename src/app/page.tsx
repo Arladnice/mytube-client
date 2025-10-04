@@ -29,11 +29,11 @@ export default async function Home() {
 
   return (
     <section>
-      <section>
+      <section className='mb-4'>
         <Heading Icon={Flame}>Trending</Heading>
-        <div className='grid grid-cols-6 gap-6'>
+        <div className='grid-6-cols'>
           {trendingVideos.map(video => (
-            <VideoItem key={video.id} video={video} />
+            <VideoItem key={video.id} video={video} Icon={Flame} />
           ))}
         </div>
       </section>

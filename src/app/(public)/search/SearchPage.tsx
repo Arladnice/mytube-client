@@ -23,7 +23,7 @@ export function SearchPage() {
       <Heading isH1 Icon={Search}>
         Search &quot;{searchParams.get('term')}&quot;
       </Heading>
-      <div className='grid grid-cols-6 gap-6'>
+      <div className='grid-6-cols'>
         {isLoading ? (
           <SkeletonLoader count={6} className='h-48 rounded-md' />
         ) : (
