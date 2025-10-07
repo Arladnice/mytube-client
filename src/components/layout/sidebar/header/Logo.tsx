@@ -7,7 +7,7 @@ import { PAGE } from '@/config/public-page.config'
 
 export function Logo() {
   return (
-    <Link href={PAGE.HOME} className='flex items-center gap-1.5'>
+    <Link href={PAGE.HOME} className='inline-flex items-center gap-1.5'>
       <SquarePlay color={COLORS.primary} size={29} />
       <span className='font-medium'>MyTube</span>
     </Link>
